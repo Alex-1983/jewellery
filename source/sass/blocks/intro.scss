@@ -1,0 +1,80 @@
+.intro {
+  padding-top: 184px;
+  padding-bottom: 183px;
+
+  background-color: $brown;
+  background-image: url("../img/intro-bg-lg@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/intro-bg-lg@2x.jpg");
+  }
+
+  @media (max-width: $screen-md) {
+    background-image: url("../img/intro-bg-md@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/intro-bg-md@2x.jpg");
+    }
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-top: 191px;
+    padding-bottom: 191px;
+    background-image: url("../img/intro-bg-sm@1x.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/intro-bg-sm@2x.jpg");
+    }
+  }
+}
+
+.intro__text {
+  @media (max-width: $screen-md) {
+    padding-right: 20px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-right: 0;
+  }
+}
+
+.intro__text p {
+  margin: 0;
+  padding: 0;
+
+  font-family: $font-family-secondary;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: $white;
+
+  @media (max-width: $screen-sm) {
+    font-size: 38px;
+    letter-spacing: 0.03em;
+  }
+}
+
+.intro__text span {
+  display: block;
+
+  font-size: 38px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 42px;
+
+  letter-spacing: 0.1px;
+  text-transform: lowercase;
+
+  @media (max-width: $screen-sm) {
+    font-size: 34px;
+    line-height: 36px;
+  }
+}

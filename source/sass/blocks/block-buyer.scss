@@ -1,0 +1,46 @@
+.block-buyer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  width: 320px;
+
+  @media (max-width: $screen-md) {
+    display: none;
+  }
+}
+
+.block-buyer__link {
+  margin-left: 36px;
+
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+
+  color: $text-color;
+
+  @media (max-width: $screen-md) {
+    margin-left: 0;
+
+    font-size: 18px;
+    line-height: 23px;
+    color: $white;
+  }
+
+  &--cart {
+    @media (max-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+.block-buyer__link--cart span {
+  margin-left: 5px;
+  padding-right: 8px;
+}

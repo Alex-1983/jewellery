@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jewellery">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons//site.webmanifest">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <title>Jewellery</title>
     <link rel="preload" href="fonts/poppins-400.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/poppins-500.woff2" as="font" crossorigin="anonymous">
@@ -16,7 +23,84 @@
     <link rel="stylesheet" href="css/style.min.css">
   </head>
 
-  <body></body>
+  <body>
+    <div style="display: none">
+      <include src="build/img/sprite_auto.svg"></include>
+    </div>
+    <header class="header">
+      <div class="header__top">
+        <div class="container header__top-inner">
+          <form class="header__form-search" action="https://echo.htmlacademy.ru" method="post">
+            <label class="visually-hidden" for="search-site">Type here to search</label>
+            <input id="search-site" type="search" name="blockSearch" placeholder="Type here to search" required>
+            <svg width="14" height="14">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+            </svg>
+          </form>
+          <a class="header__logo">
+            <svg width="66" height="66">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"></use>
+            </svg>
+          </a>
+          <div class="header__block-buyer block-buyer">
+            <a class="btn block-buyer__link" href="#">login</a>
+            <a class="btn block-buyer__link block-buyer__link--cart" href="#">Cart<span>0</span></a>
+          </div>
+          <button class="btn burger" type="button" aria-label="Показать главное меню" title="Открыть">
+            <span>Показать главное меню</span>
+          </button>
+          <a class="header__card-icon" href="#">
+            <svg width="20" height="18">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-card"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="container header__nav-wrap">
+        <nav class="main-nav">
+          <ul class="list-reset main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">What’s new</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Chokers</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Necklaces</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Rings</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link" href="#">Earrings</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="list-reset secondary-nav">
+          <li class="secondary-nav__item">
+            <a class="secondary-nav__link" href="#">About CH</a>
+          </li>
+          <li class="secondary-nav__item">
+            <a class="secondary-nav__link" href="#">Stores & Hours</a>
+          </li>
+          <li class="secondary-nav__item">
+            <a class="secondary-nav__link" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <a class="header__nav-link" href="#">Login</a>
+      </div>
+    </header>
+    <main class="content">
+      <section class="intro">
+        <h1 class="visually-hidden">Shop jewellery</h1>
+        <div class="container">
+          <div class="intro__text">
+            <p>Perfection<span>made to be yours</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
 
 </html>
-

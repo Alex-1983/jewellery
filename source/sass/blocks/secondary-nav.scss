@@ -1,0 +1,17 @@
+.secondary-nav {
+  padding-bottom: 23px;
+
+  @media (max-width: $screen-sm) {
+    padding-bottom: 13px;
+  }
+}
+
+.secondary-nav__item {
+  margin-bottom: 23px;
+}
+
+.secondary-nav__link {
+  font-size: 18px;
+
+  color: rgba(255, 255, 255, 0.75);
+}
