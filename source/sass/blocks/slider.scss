@@ -192,7 +192,9 @@
   }
 }
 
-.slider .swiper-pagination-sm span {
-  margin-right: 3px;
-  margin-left: 3px;
+.slider .swiper-pagination-fraction span {
+  @media (max-width: $screen-sm) {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
 }

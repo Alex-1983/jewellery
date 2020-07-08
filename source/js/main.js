@@ -50,9 +50,9 @@
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
-          type: 'custom',
-          renderCustom: function (swiper, prev, next) {
-            return '<div class="swiper-pagination-sm"><span>' + prev + '</span> <span>of</span> <span>' + next + '</span></div>';
+          type: 'fraction',
+          renderFraction: function (currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
           }
         }
       },
