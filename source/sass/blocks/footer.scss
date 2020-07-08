@@ -117,54 +117,7 @@
 }
 
 .footer__form-btn {
-  position: relative;
-
   margin-left: auto;
-  padding: 7px;
-  padding-right: 42px;
-
-  font-size: 16px;
-  line-height: $line-height;
-
-  color: $white;
-  background-color: transparent;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-  }
-
-  &::before {
-    top: 50%;
-    right: 2px;
-
-    width: 27px;
-    height: 1px;
-
-    transform: translateY(-50%);
-
-    background-color: $white;
-  }
-
-  &::after {
-    top: 42%;
-    right: 2px;
-
-    width: 7px;
-    height: 7px;
-
-    transform: rotate(45deg);
-
-    border: 1px solid $white;
-    border-bottom: transparent;
-    border-left: transparent;
-  }
-
-  &:hover,
-  &:focus {
-    opacity: 0.5;
-  }
 }
 
 .footer__list {
