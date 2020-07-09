@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="js" lang="en">
+<html lang="en">
 
   <head>
     <meta charset="UTF-8">
@@ -112,7 +112,7 @@
       <section class="slider">
         <div class="container slider__inner">
           <h2>New in</h2>
-          <a class="slider__link" href="#">Shop now</a>
+          <a class="link slider__link" href="#">Shop now</a>
           <div class="swiper-container">
             <ul class="list-reset swiper-wrapper">
               <li class="slider__item swiper-slide">
@@ -254,6 +254,78 @@
           <button class="btn arrow arrow--next" type="button">Назад</button>
         </div>
       </section>
+      <section class="blog">
+        <div class="container blog__inner">
+          <h2>Blog</h2>
+          <a class="link blog__link" href="#">Read all</a>
+          <div class="blog__wrap">
+            <div class="blog__col-left">
+              <article class="blog__description">
+                <div class="blog__text">
+                  <span>September 30, 2019</span>
+                  <h3>How to care for your jewellery</h3>
+                  <a class="link" href="#">Read article</a>
+                </div>
+                <div class="blog__img-wrap blog__img-wrap--jewellery">
+                  <picture>
+                    <source type="image/webp" media="(max-width: 767px)" srcset="img/blog-img-jewellery-sm@1x.webp, img/blog-img-jewellery-sm@2x.webp 2x">
+                    <source type="image/webp" media="(max-width: 1023px)" srcset="img/blog-img-jewellery-md@1x.webp, img/blog-img-jewellery-md@2x.webp 2x">
+                    <source type="image/webp" srcset="img/blog-img-jewellery-lg@1x.webp, img/blog-img-jewellery-lg@2x.webp 2x">
+                    <!-- 1х: 290px; 2x: 580px -->
+                    <source media="(max-width: 767px)" srcset="img/blog-img-jewellery-sm@1x.jpg, img/blog-img-jewellery-sm@2x.jpg 2x">
+                    <!-- 1х: 339px; 2x: 678px -->
+                    <source media="(max-width: 1023px)" srcset="img/blog-img-jewellery-md@1x.jpg, img/blog-img-jewellery-md@2x.jpg 2x">
+                    <!-- 1х: 285px; 2x: 570px -->
+                    <img src="img/blog-img-jewellery-lg@1x.jpg" srcset="img/blog-img-jewellery-lg@2x.jpg 2x" width="285" height="300" alt="How to care for your jewellery">
+                  </picture>
+                </div>
+              </article>
+              <article class="blog__description">
+                <div class="blog__text blog__text--crystals">
+                  <span>September 23, 2019</span>
+                  <h3>Power of crystals</h3>
+                  <a class="link" href="#">Read article</a>
+                </div>
+                <div class="blog__img-wrap">
+                  <picture>
+                    <source type="image/webp" media="(max-width: 767px)" srcset="img/blog-img-crystals-sm@1x.webp, img/blog-img-crystals-sm@2x.webp 2x">
+                    <source type="image/webp" media="(max-width: 1023px)" srcset="img/blog-img-crystals-md@1x.webp, img/blog-img-crystals-md@2x.webp 2x">
+                    <source type="image/webp" srcset="img/blog-img-crystals-lg@1x.webp, img/blog-img-crystals-lg@2x.webp 2x">
+                    <!-- 1х: 290px; 2x: 580px -->
+                    <source media="(max-width: 767px)" srcset="img/blog-img-crystals-sm@1x.jpg, img/blog-img-crystals-sm@2x.jpg 2x">
+                    <!-- 1х: 339px; 2x: 678px -->
+                    <source media="(max-width: 1023px)" srcset="img/blog-img-crystals-md@1x.jpg, img/blog-img-crystals-md@2x.jpg 2x">
+                    <!-- 1х: 285px; 2x: 570px -->
+                    <img src="img/blog-img-crystals-lg@1x.jpg" srcset="img/blog-img-crystals-lg@2x.jpg 2x" width="285" height="300" alt="Power of crystals">
+                  </picture>
+                </div>
+              </article>
+            </div>
+            <div class="blog__col-right">
+              <article class="blog__description blog__description--right">
+                <div class="blog__text blog__text--trends">
+                  <span>September 16, 2019</span>
+                  <h3>AW 19 trends</h3>
+                  <a class="link" href="#">Read article</a>
+                </div>
+                <div class="blog__img-wrap blog__img-wrap--woman">
+                  <picture>
+                  <source type="image/webp" media="(max-width: 767px)" srcset="img/blog-photo-woman-sm@1x.webp, img/blog-photo-woman-sm@2x.webp 2x">
+                  <source type="image/webp" media="(max-width: 1023px)" srcset="img/blog-photo-woman-md@1x.webp, img/blog-photo-woman-md@2x.webp 2x">
+                  <source type="image/webp" srcset="img/blog-photo-woman-lg@1x.webp, img/blog-photo-woman-lg@2x.webp 2x">
+                  <!-- 1х: 290px; 2x: 580px -->
+                  <source media="(max-width: 767px)" srcset="img/blog-photo-woman-sm@1x.jpg, img/blog-photo-woman-sm@2x.jpg 2x">
+                  <!-- 1х: 339px; 2x: 678px -->
+                  <source media="(max-width: 1023px)" srcset="img/blog-photo-woman-md@1x.jpg, img/blog-photo-woman-md@2x.jpg 2x">
+                  <!-- 1х: 285px; 2x: 570px -->
+                  <img src="img/blog-photo-woman-lg@1x.jpg" srcset="img/blog-photo-woman-lg@2x.jpg 2x" width="570" height="630" alt="AW 19 trends">
+                  </picture>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container footer__inner">
@@ -337,6 +409,7 @@
     </footer>
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>
+    <script>objectFitImages();</script>
   </body>
 
 </html>

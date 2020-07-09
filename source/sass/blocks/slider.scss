@@ -4,10 +4,12 @@
 
   @media (max-width: $screen-md) {
     padding-top: 70px;
+    padding-bottom: 30px;
   }
 
   @media (max-width: $screen-sm) {
     padding-top: 60px;
+    padding-bottom: 20px;
   }
 }
 
@@ -40,19 +42,10 @@
   }
 }
 
-.slider a {
-  color: $text-color;
-}
-
 .slider__link {
-  display: block;
+  margin-bottom: 60px;
 
-  margin: 0 auto 60px;
   width: 80px;
-
-  text-transform: capitalize;
-
-  border-bottom: 1px solid $brown;
 
   @media (max-width: $screen-md) {
     margin-bottom: 50px;
@@ -89,6 +82,7 @@
 
   margin-bottom: 6px;
   padding-top: 15px;
+  color: $text-color;
 
   @media (max-width: $screen-sm) {
     padding-top: 11px;

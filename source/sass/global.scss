@@ -23,6 +23,7 @@
   max-width: 100%;
 
   font-family: inherit;
+
   cursor: pointer;
   user-select: none;
   text-align: center;
@@ -30,6 +31,7 @@
   text-decoration: none;
   text-transform: none;
   text-overflow: ellipsis;
+
   border: 0;
   outline: none;
 }
@@ -43,4 +45,15 @@
 
 .no-scroll {
   overflow: hidden;
+}
+
+.link {
+  display: block;
+
+  margin: 0 auto;
+
+  text-transform: capitalize;
+
+  color: $text-color;
+  border-bottom: 1px solid $brown;
 }

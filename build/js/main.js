@@ -66,4 +66,7 @@
 
   });
 
+  /*eslint-disable*/
+  objectFitImages();
+
 })();
