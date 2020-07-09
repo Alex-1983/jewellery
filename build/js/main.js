@@ -72,19 +72,18 @@
 
   var accordionToggles = document.querySelectorAll('.accordion__title button');
   var accordionContent = document.querySelectorAll('.accordion p');
-  var accordionOpen = "accordion-open";
 
   function onToggleClicked(evt) {
     var accordionContainer = evt.target.closest('.accordion__title').parentElement;
-    if (accordionContainer.classList.contains(accordionOpen)) {
-      accordionContainer.classList.remove(accordionOpen);
+    if (accordionContainer.classList.contains('accordion-open')) {
+      accordionContainer.classList.remove('accordion-open');
     } else {
       for (var i = 0; i < accordionContent.length; i++) {
-        accordionContent[i].classList.remove(accordionOpen);
+        accordionContent[i].classList.remove('accordion-open');
       }
-      accordionContainer.classList.add(accordionOpen);
+      accordionContainer.classList.add('accordion-open');
     }
-  };
+  }
 
   for (var i = 0; i < accordionToggles.length; i++) {
     accordionToggles[i].addEventListener('click', onToggleClicked);
