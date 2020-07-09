@@ -2,6 +2,8 @@
 
 (function () {
 
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
   // menu
 
   var body = document.querySelector('body');
@@ -65,6 +67,27 @@
 
 
   });
+
+  // accordion
+
+  var accordionToggles = document.querySelectorAll('.accordion__title button');
+  var accordionContent = document.querySelectorAll('.accordion p');
+
+  function onToggleClicked(evt) {
+    var accordionContainer = evt.target.closest('.accordion__title').parentElement;
+    if (accordionContainer.classList.contains('accordion-open')) {
+      accordionContainer.classList.remove('accordion-open');
+    } else {
+      for (var i = 0; i < accordionContent.length; i++) {
+        accordionContent[i].classList.remove('accordion-open');
+      }
+      accordionContainer.classList.add('accordion-open');
+    }
+  }
+
+  for (var i = 0; i < accordionToggles.length; i++) {
+    accordionToggles[i].addEventListener('click', onToggleClicked);
+  }
 
   /*eslint-disable*/
   objectFitImages();

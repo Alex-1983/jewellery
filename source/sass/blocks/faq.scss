@@ -1,0 +1,26 @@
+.faq {
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  @media (max-width: $screen-md) {
+    padding-top: 10px;
+  }
+}
+
+.faq__inner {
+  width: 990px;
+
+  @media (max-width: $screen-md) {
+    width: 100%;
+  }
+}
+
+.faq__inner h2 {
+  margin-bottom: 48px;
+
+  letter-spacing: 0.03em;
+
+  @media (max-width: $screen-sm) {
+    margin-bottom: 26px;
+  }
+}

@@ -1,0 +1,152 @@
+.accordion__item {
+  position: relative;
+
+  padding: 43px 85px 30px 50px;
+
+  border: 1px solid $brown;
+  border-bottom: 0;
+
+  @media (max-width: $screen-md) {
+    padding-bottom: 17px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding: 18px 55px 5px 25px;
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid $brown;
+  }
+}
+
+.accordion__title h3 {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+
+  font-size: 18px;
+
+  @media (max-width: $screen-md) {
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-bottom: 15px;
+    padding-right: 25px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+.accordion__title--deliver h3 {
+  @media (max-width: $screen-sm) {
+    padding-right: 60px;
+  }
+}
+
+.accordion__title--payment h3 {
+  @media (max-width: $screen-sm) {
+    padding-right: 27px;
+  }
+}
+
+.accordion__title--service h3 {
+  @media (max-width: $screen-sm) {
+    padding-right: 0;
+  }
+}
+
+.accordion p {
+  margin: 0;
+  padding: 0;
+  padding-right: 305px;
+
+  @media (max-width: $screen-md) {
+    padding-right: 0;
+  }
+
+  @media (max-width: $screen-sm) {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.js .accordion p {
+  display: none;
+}
+
+.accordion__btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  display: block;
+
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 46px;
+    right: 50px;
+
+    width: 12px;
+    height: 12px;
+
+    transform: rotate(45deg);
+
+    border: 1px solid $brown;
+    border-top: transparent;
+    border-left: transparent;
+  }
+
+  @media (max-width: $screen-md) {
+    &::after {
+      top: 44px;
+      right: 52px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @media (max-width: $screen-sm) {
+    &::after {
+      top: 18px;
+      right: 26px;
+    }
+  }
+
+  &:hover {
+    opacity: 0.3;
+  }
+}
+
+.js .accordion-open p {
+  display: block;
+
+  margin-bottom: 6px;
+
+  @media (max-width: $screen-md) {
+    margin-bottom: 26px;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-bottom: 13px;
+  }
+}
+
+.js .accordion-open .accordion__btn::after {
+  top: 53px;
+
+  transition: 0.3s;
+  transform: rotate(225deg);
+
+  @media (max-width: $screen-sm) {
+    top: 27px;
+  }
+}
