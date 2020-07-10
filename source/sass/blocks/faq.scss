@@ -5,6 +5,10 @@
   @media (max-width: $screen-md) {
     padding-top: 10px;
   }
+
+  @media (max-width: $screen-sm) {
+    padding-bottom: 35px;
+  }
 }
 
 .faq__inner {

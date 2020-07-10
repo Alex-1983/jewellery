@@ -201,5 +201,9 @@
   font-family: "object-fit: cover";/*stylelint-disable*/
 
   object-fit: cover;
+  object-position: center;
+}
+
+.blog__img-wrap--woman img {
   object-position: top center;
 }

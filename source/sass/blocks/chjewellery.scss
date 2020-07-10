@@ -1,0 +1,170 @@
+.chjewellery {
+  padding-top: 60px;
+  padding-bottom: 125px;
+
+  @media (max-width: $screen-md) {
+    padding-top: 15px;
+    padding-bottom: 74px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-bottom: 65px;
+  }
+}
+
+.chjewellery__inner h2 {
+  margin-bottom: 18px;
+
+  letter-spacing: 0.03em;
+}
+
+.chjewellery__inner a {
+  margin-bottom: 60px;
+  padding-bottom: 4px;
+  width: 74px;
+
+  @media (max-width: $screen-sm) {
+    margin-bottom: 45px;
+  }
+}
+
+.chjewellery__inner span {
+  font-size: 42px;
+}
+
+.chjewellery__photo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1170px;
+
+  @media (max-width: $screen-sm) {
+    display: block;
+  }
+}
+
+.chjewellery__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-right: 10px;
+  width: 19.9%;
+
+  @media (max-width: $screen-md) {
+    width: 19.4%;
+  }
+
+  @media (max-width: $screen-sm) {
+    flex-direction: row;
+
+    width: 100%;
+  }
+
+  &--first {
+    flex-direction: row;
+
+    width: 56.3%;
+
+    margin-right: 25px;
+
+    @media (max-width: $screen-md) {
+      margin-right: 17px;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-bottom: 3px;
+      width: 100%;
+    }
+  }
+
+  &--last {
+    @media (max-width: $screen-sm) {
+      display: none;
+    }
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.chjewellery__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-right: 10px;
+
+  @media (max-width: $screen-md) {
+    width: 35%;
+    margin-right: 18px;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-right: 12px;
+    width: 45%;
+  }
+
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.chjewellery__container .chjewellery__img-wrap {
+  &:last-of-type {
+    @media (max-width: $screen-sm) {
+      margin-top: 11px;
+    }
+  }
+}
+
+.chjewellery__img-wrap {
+  &--first,
+  &--last {
+    @media (max-width: $screen-md) {
+      width: 96%;
+    }
+  }
+
+  &--first {
+    margin-left: auto;
+    width: 94%;
+  }
+
+  &--bottom {
+    width: 94%;
+
+    @media (max-width: $screen-sm) {
+      order: -1;
+
+      margin-top: 5px;
+      margin-right: 15px;
+      width: 45%;
+    }
+  }
+
+  &--big {
+    @media (max-width: $screen-md) {
+      width: 61%;
+    }
+
+    @media (max-width: $screen-sm) {
+      width: 50%;
+    }
+  }
+
+  &--top {
+    @media (max-width: $screen-sm) {
+      width: 51%;
+    }
+  }
+}
+
+.chjewellery__img-wrap img {
+  width: 100%;
+}
