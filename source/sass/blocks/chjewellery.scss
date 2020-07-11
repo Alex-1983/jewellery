@@ -1,6 +1,6 @@
 .chjewellery {
   padding-top: 60px;
-  padding-bottom: 125px;
+  padding-bottom: 130px;
 
   @media (max-width: $screen-md) {
     padding-top: 15px;
@@ -55,7 +55,7 @@
   width: 19.9%;
 
   @media (max-width: $screen-md) {
-    width: 19.4%;
+    width: 19.5%;
   }
 
   @media (max-width: $screen-sm) {
@@ -98,9 +98,9 @@
   justify-content: space-between;
 
   margin-right: 10px;
+  width: 34.9%;
 
   @media (max-width: $screen-md) {
-    width: 35%;
     margin-right: 18px;
   }
 
@@ -108,7 +108,6 @@
     margin-right: 12px;
     width: 45%;
   }
-
 
   &:last-of-type {
     margin-right: 0;
@@ -124,20 +123,54 @@
 }
 
 .chjewellery__img-wrap {
-  &--first,
-  &--last {
+  &--1 {
+    height: 230px;
+
     @media (max-width: $screen-md) {
-      width: 96%;
+      height: auto;
     }
   }
 
-  &--first {
-    margin-left: auto;
-    width: 94%;
+  &--2 {
+    height: 154px;
+
+    @media (max-width: $screen-md) {
+      height: auto;
+    }
   }
 
-  &--bottom {
+  &--3 {
+    width: 60.6%;
+    height: 414px;
+
+    @media (max-width: $screen-md) {
+      height: auto;
+    }
+
+    @media (max-width: $screen-sm) {
+      width: 50%;
+    }
+  }
+
+  &--4 {
+    height: 193px;
+
+    @media (max-width: $screen-md) {
+      height: auto;
+    }
+
+    @media (max-width: $screen-sm) {
+      width: 51%;
+    }
+  }
+
+  &--5 {
     width: 94%;
+    height: 191px;
+
+    @media (max-width: $screen-md) {
+      height: auto;
+    }
 
     @media (max-width: $screen-sm) {
       order: -1;
@@ -148,23 +181,37 @@
     }
   }
 
-  &--big {
-    @media (max-width: $screen-md) {
-      width: 61%;
-    }
+  &--6 {
+    margin-left: auto;
+    width: 94%;
+    height: 218px;
 
-    @media (max-width: $screen-sm) {
-      width: 50%;
+    @media (max-width: $screen-md) {
+      width: 96%;
+      height: auto;
     }
   }
 
-  &--top {
-    @media (max-width: $screen-sm) {
-      width: 51%;
+  &--7 {
+    height: 166px;
+
+    @media (max-width: $screen-md) {
+      width: 100%;
+      height: auto;
     }
   }
 }
 
 .chjewellery__img-wrap img {
   width: 100%;
+  height: 100%;
+
+  font-family: "object-fit: cover";/*stylelint-disable*/
+
+  object-fit: cover;
+  object-position: center;
+
+  @media (max-width: $screen-md) {
+    height: auto;
+  }
 }

@@ -74,8 +74,16 @@
     position: relative;
   }
 
-  &:not(:first-of-type) {
-    margin-top: auto;
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+
+    @media (max-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-bottom: 40px;
+    }
   }
 }
 
