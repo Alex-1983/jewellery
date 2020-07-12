@@ -1,3 +1,13 @@
+.header__nav-wrap--catalog .secondary-nav {
+  display: none;
+}
+
+.header--open .header__nav-wrap--catalog .secondary-nav {
+  @media (max-width: $screen-md) {
+    display: block;
+  }
+}
+
 .secondary-nav {
   padding-bottom: 23px;
 
@@ -7,11 +17,16 @@
 }
 
 .secondary-nav__item {
-  margin-bottom: 23px;
+  margin-bottom: 20px;
 }
 
 .secondary-nav__link {
   font-size: 18px;
 
   color: rgba(255, 255, 255, 0.75);
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
 }

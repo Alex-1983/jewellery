@@ -1,0 +1,42 @@
+.pagination__inner {
+  max-width: 1190px;
+}
+
+.pagination__line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  margin-left: auto;
+  width: 74.3%;
+}
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  transform: translateX(-15px);
+}
+
+.pagination__list .pagination__item {
+  margin-right: 3px;
+}
+
+.pagination__link {
+  display: block;
+  color: $text-color;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.pagination__list .pagination__link {
+  padding-right: 5px;
+  padding-left: 5px;
+  color: $gray;
+
+  &--curent {
+    color: $text-color;
+  }
+}

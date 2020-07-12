@@ -1,6 +1,6 @@
 .header {
   padding-top: 27px;
-  padding-bottom: 60px;
+  padding-bottom: 61px;
 
   @media (max-width: $screen-md) {
     padding-bottom: 31px;
@@ -9,6 +9,18 @@
   @media (max-width: $screen-sm) {
     padding-top: 18px;
     padding-bottom: 20px;
+  }
+
+  &--catalog {
+    padding-bottom: 0;
+
+    @media (max-width: $screen-md) {
+      padding-bottom: 31px;
+    }
+
+    @media (max-width: $screen-sm) {
+      padding-bottom: 21px;
+    }
   }
 }
 
@@ -171,6 +183,11 @@
     stroke: #1d1613;
     fill: transparent;
   }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
 }
 
 .header--open {
@@ -241,6 +258,10 @@
   display: none;
 }
 
+.header--catalog .header__nav-wrap {
+  display: block;
+}
+
 .header--open .header__nav-wrap {
   @media (max-width: $screen-md) {
     display: block;
@@ -259,5 +280,10 @@
     line-height: 1.3;
 
     color: $white;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
   }
 }

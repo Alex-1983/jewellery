@@ -68,25 +68,26 @@
 
   });
 
-  // accordion
+  // faq
 
-  var accordionToggles = document.querySelectorAll('.accordion__title button');
-  var accordionContent = document.querySelectorAll('.accordion p');
+  var faq = document.querySelector('.faq');
+  var faqToggles = faq.querySelectorAll('.faq__toggle');
+  var faqContent = faq.querySelectorAll('.faq__item p');
 
-  function onToggleClicked(evt) {
-    var accordionContainer = evt.target.closest('.accordion__title').parentElement;
-    if (accordionContainer.classList.contains('accordion-open')) {
-      accordionContainer.classList.remove('accordion-open');
+  var onToggleClicked = function (evt) {
+    var faqContainer = evt.target.closest('.faq__title').parentElement;
+    if (faqContainer.classList.contains('faq__item--open')) {
+      faqContainer.classList.remove('faq__item--open');
     } else {
-      for (var i = 0; i < accordionContent.length; i++) {
-        accordionContent[i].classList.remove('accordion-open');
+      for (var i = 0; i < faqContent.length; i++) {
+        faqContent[i].classList.remove('faq__item--open');
       }
-      accordionContainer.classList.add('accordion-open');
+      faqContainer.classList.add('faq__item--open');
     }
-  }
+  };
 
-  for (var i = 0; i < accordionToggles.length; i++) {
-    accordionToggles[i].addEventListener('click', onToggleClicked);
+  for (var i = 0; i < faqToggles.length; i++) {
+    faqToggles[i].addEventListener('click', onToggleClicked);
   }
 
   /*eslint-disable*/
