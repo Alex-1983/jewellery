@@ -1,11 +1,20 @@
 .shop {
   width: 74.3%;
+
+  @media (max-width: $screen-md) {
+    width: 100%;
+  }
 }
 
 .shop__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: $screen-md) {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
 }
 
 .shop__item {
@@ -14,6 +23,17 @@
 
   text-align: center;
 
+  @media (max-width: $screen-md) {
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 226px;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-bottom: 26px;
+    width: 150px;
+  }
+
   &:hover {
     opacity: 0.7;
   }
@@ -21,6 +41,16 @@
 
 .shop__img-wrap img {
   width: 100%;
+
+  @media (max-width: $screen-md) {
+    width: 206px;
+    height: 208px;
+  }
+
+  @media (max-width: $screen-sm) {
+    width: 130px;
+    height: 136px;
+  }
 }
 
 .shop__item a {
@@ -30,6 +60,10 @@
   padding-top: 17px;
 
   color: $text-color;
+
+  @media (max-width: $screen-sm) {
+    padding-top: 12px;
+  }
 }
 
 .shop__item span {

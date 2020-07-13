@@ -1,5 +1,13 @@
 .catalog {
   padding-top: 80px;
+
+  @media (max-width: $screen-md) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-top: 39px;
+  }
 }
 
 .catalog__inner {
@@ -8,6 +16,56 @@
   justify-content: space-between;
 
   max-width: 1190px;
+
+  @media (max-width: $screen-md) {
+    display: block;
+
+    width: 100%;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.catalog__btn {
+  display: none;
+
+  @media (max-width: $screen-md) {
+    display: block;
+
+    margin-bottom: 50px;
+    padding: 25px;
+    width: 100%;
+
+    color: $white;
+    background-color: $brown;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-bottom: 40px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+.catalog__btn-close {
+  display: none;
+}
+
+.catalog__filter {
+  @media (max-width: $screen-md) {
+    margin-top: 17px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-top: 30px;
+  }
 }
 
 .catalog__pagination {
@@ -16,4 +74,15 @@
   width: 100%;
 
   border-top: 1px solid #f6f6f4;
+
+  @media (max-width: $screen-md) {
+    padding-top: 36px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-top: 16px;
+    padding-bottom: 65px;
+
+    border: 0;
+  }
 }

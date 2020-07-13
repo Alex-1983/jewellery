@@ -9,6 +9,15 @@
 
   margin-left: auto;
   width: 74.3%;
+
+  @media (max-width: $screen-md) {
+    margin: 0;
+    width: 100%;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-left: 32px;
+  }
 }
 
 .pagination__list {
@@ -24,7 +33,15 @@
 
 .pagination__link {
   display: block;
+
   color: $text-color;
+
+  &--first,
+  &--last {
+    @media (max-width: $screen-sm) {
+      display: none;
+    }
+  }
 
   &:hover {
     opacity: 0.5;
@@ -34,7 +51,13 @@
 .pagination__list .pagination__link {
   padding-right: 5px;
   padding-left: 5px;
+
   color: $gray;
+
+  @media (max-width: $screen-sm) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 
   &--curent {
     color: $text-color;

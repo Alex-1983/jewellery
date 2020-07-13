@@ -1,28 +1,61 @@
 .filter {
   width: 21.4%;
+
+  @media (max-width: $screen-md) {
+    position: relative;
+
+    display: none;
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 40px;
+    width: 66%;
+
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-right: 10px;
+    padding-left: 10px;
+
+    width: 100%;
+
+    box-shadow: none;
+  }
 }
 
 .filter__container {
   border: 1px solid $brown;
+
+  @media (max-width: $screen-md) {
+    border: 0;
+  }
 }
 
 .filter__item {
-  padding-right: 15px;
-  padding-bottom: 16px;
-  padding-left: 25px;
-
   border-bottom: 1px solid $brown;
 
   &:last-of-type {
     border: 0;
+
+    @media (max-width: $screen-md) {
+      border-bottom: 1px solid $brown;
+    }
   }
 }
 
 .filter__title {
   position: relative;
 
-  padding-top: 25px;
-  padding-bottom: 5px;
+  padding: 25px 30px 21px 24px;
+
+  @media (max-width: $screen-md) {
+    padding: 33px 75px 35px 43px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding: 24px 50px 24px 20px;
+  }
 }
 
 .filter__title h3 {
@@ -30,6 +63,10 @@
   padding: 0;
 
   font-size: 16px;
+
+  @media (max-width: $screen-md) {
+    font-size: 18px;
+  }
 }
 
 .filter__toggle {
@@ -50,7 +87,7 @@
     content: "";
     position: absolute;
     top: 23px;
-    right: 9px;
+    right: 25px;
 
     width: 12px;
     height: 12px;
@@ -65,8 +102,8 @@
 
   @media (max-width: $screen-md) {
     &::after {
-      top: 44px;
-      right: 52px;
+      top: 33px;
+      right: 46px;
 
       width: 16px;
       height: 16px;
@@ -75,8 +112,8 @@
 
   @media (max-width: $screen-sm) {
     &::after {
-      top: 18px;
-      right: 26px;
+      top: 22px;
+      right: 22px;
     }
   }
 
@@ -88,8 +125,25 @@
 .js .filter--open .filter__title {
   padding-bottom: 22px;
 
+  @media (max-width: $screen-md) {
+    padding-bottom: 25px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-top: 31px;
+    padding-bottom: 25px;
+  }
+
   &--range {
-    padding-bottom: 17px;
+    padding-bottom: 19px;
+
+    @media (max-width: $screen-md) {
+      padding-bottom: 26px;
+    }
+
+    @media (max-width: $screen-sm) {
+      padding-top: 24px;
+    }
   }
 }
 
@@ -99,16 +153,49 @@
   transition: 0.3s;
   transform: rotate(225deg);
 
+  @media (max-width: $screen-md) {
+    top: 41px;
+  }
+
   @media (max-width: $screen-sm) {
-    top: 27px;
+    top: 37px;
   }
 }
 
 .filter__range {
+  padding-bottom: 17px;
+
+  @media (max-width: $screen-md) {
+    padding-bottom: 35px;
+  }
+
+  @media (max-width: $screen-sm) {
+    padding-bottom: 25px;
+  }
+}
+
+.filter__range-controls {
   position: relative;
 
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  width: 80%;
   height: 15px;
+
+  @media (max-width: $screen-md) {
+    margin-right: auto;
+    margin-left: auto;
+    width: 68%;
+
+    transform: translateX(-18px);
+  }
+
+  @media (max-width: $screen-sm) {
+    width: 92%;
+
+    transform: none;
+  }
 
   &::before {
     content: "";
@@ -139,19 +226,32 @@
   border-radius: 50%;
   background-color: $brown;
 
+  @media (max-width: $screen-md) {
+    width: 18px;
+    height: 18px;
+  }
+
   &--left {
-    left: 21%;
+    left: 22%;
+
+    @media (max-width: $screen-md) {
+      left: 15%;
+    }
   }
 
   &--right {
-    right: 21%;
+    right: 18%;
+
+    @media (max-width: $screen-md) {
+      right: 21.7%;
+    }
   }
 }
 
 .filter__range-line {
   position: absolute;
   top: 50%;
-  right: 15%;
+  right: 18%;
   left: 15%;
   z-index: 10;
 
@@ -160,6 +260,10 @@
   transform: translateY(-50%);
 
   background-color: $brown;
+
+  @media (max-width: $screen-md) {
+    right: 25%;
+  }
 }
 
 .filter__range-prices {
@@ -179,23 +283,59 @@
 
     color: $text-color;
 
+    @media (max-width: $screen-md) {
+      padding-top: 8px;
+
+      font-size: 16px;
+    }
+
     &:first-of-type {
-      padding-left: 36px;
+      padding-left: 62px;
+
+      @media (max-width: $screen-md) {
+        padding-left: 90px;
+      }
+
+      @media (max-width: $screen-sm) {
+        padding-left: 42px;
+      }
     }
 
     &:last-of-type {
-      padding-right: 36px;
+      padding-right: 52px;
+
+      @media (max-width: $screen-md) {
+        padding-right: 152px;
+      }
+
+      @media (max-width: $screen-sm) {
+        padding-right: 57px;
+      }
     }
   }
 }
 
-.filter__submit {
-  margin-top: 37px;
+.filter__btn-submit {
+  margin-top: 35px;
   padding: 25px 10px;
   width: 100%;
 
   color: $white;
   background-color: $brown;
+
+  @media (max-width: $screen-md) {
+    display: block;
+
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-top: 30px;
+    width: 85%;
+  }
 
   &:hover,
   &:focus {
@@ -203,13 +343,12 @@
   }
 }
 
-.filter__clear {
+.filter__btn-clear {
   display: block;
 
   margin: 28px auto 0;
   padding: 0;
   padding-bottom: 5px;
-
   width: 67px;
 
   text-transform: capitalize;
@@ -218,6 +357,23 @@
   border-bottom: 1px solid $brown;
   background-color: transparent;
 
+  @media (max-width: $screen-md) {
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 25px 10px;
+    width: 80%;
+
+    border: 1px solid $brown;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin-top: 20px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    width: 85%;
+  }
+
   &:hover,
   &:focus {
     opacity: 0.7;
@@ -225,23 +381,62 @@
 }
 
 .js .filter__content {
-  overflow: hidden;
-
-  max-height: 0;
-
-  transition: max-height 0.3s;
+  display: none;
 }
 
 .js .filter--open .filter__content {
-  max-height: 1000px;
+  display: block;
+}
 
-  transition: max-height 0.6s;
+.filter__close {
+  display: none;
 
   @media (max-width: $screen-md) {
-    margin-bottom: 26px;
-  }
+    position: absolute;
+    top: -17px;
+    right: -13px;
+    z-index: 100;
 
-  @media (max-width: $screen-sm) {
-    margin-bottom: 15px;
+    display: block;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+    background-color: $text-color;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 17px;
+      height: 2px;
+
+      background-color: $white;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    @media (max-width: $screen-sm) {
+      top: -9px;
+      right: 0;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
+}
+
+.filter-show {
+  display: block;
 }
