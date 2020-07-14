@@ -11,7 +11,7 @@
     padding-bottom: 20px;
   }
 
-  &--catalog {
+  &--show {
     padding-bottom: 0;
 
     @media (max-width: $screen-md) {
@@ -58,6 +58,16 @@
   }
 }
 
+.header__bottom {
+  &--card {
+    border-bottom: 1px solid #f6f5f4;
+
+    @media (max-width: $screen-md) {
+      border: 0;
+    }
+  }
+}
+
 .header__form-search {
   position: relative;
 
@@ -98,6 +108,7 @@
   vertical-align: top;
 
   border: 0;
+
   appearance: none;
 
   @media (max-width: $screen-md) {
@@ -258,7 +269,7 @@
   display: none;
 }
 
-.header--catalog .header__nav-wrap {
+.header--show .header__nav-wrap {
   display: block;
 }
 

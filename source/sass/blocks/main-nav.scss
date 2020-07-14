@@ -8,7 +8,7 @@
   }
 }
 
-.header__nav-wrap--catalog .main-nav__list {
+.header__nav-wrap--show .main-nav__list {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -22,7 +22,7 @@
   }
 }
 
-.header--open .header__nav-wrap--catalog .main-nav__list {
+.header--open .header__nav-wrap--show .main-nav__list {
   @media (max-width: $screen-md) {
     display: block;
     margin: 0;

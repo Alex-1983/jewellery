@@ -1,8 +1,8 @@
-.header__nav-wrap--catalog .secondary-nav {
+.header__nav-wrap--show .secondary-nav {
   display: none;
 }
 
-.header--open .header__nav-wrap--catalog .secondary-nav {
+.header--open .header__nav-wrap--show .secondary-nav {
   @media (max-width: $screen-md) {
     display: block;
   }

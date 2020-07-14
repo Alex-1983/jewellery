@@ -1,13 +1,13 @@
 'use strict';
 
-(function() {
+(function () {
 
   var ESC_KEYCODE = 27;
 
   document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
-  var createEscHandler = function(fn) {
-    return function(evt) {
+  var createEscHandler = function (fn) {
+    return function (evt) {
       if (evt.keyCode === ESC_KEYCODE) {
         fn();
       }
@@ -18,7 +18,7 @@
     createEscHandler: createEscHandler
   };
 
-  (function() {
+  (function () {
 
     // menu
 
@@ -27,7 +27,7 @@
     var burger = document.querySelector('.burger');
 
     if (burger) {
-      burger.addEventListener('click', function() {
+      burger.addEventListener('click', function () {
         header.classList.toggle('header--open');
         body.classList.toggle('no-scroll');
       });
@@ -35,7 +35,7 @@
 
   })();
 
-  (function() {
+  (function () {
 
     // slider
 
@@ -49,7 +49,7 @@
         el: '.swiper-pagination',
         clickable: true,
 
-        renderBullet: function(index, className) {
+        renderBullet: function (index, className) {
           return '<span class="' + className + '">' + (index + 1) + '</span>';
         },
       },
@@ -68,7 +68,7 @@
             el: '.swiper-pagination',
             clickable: true,
             type: 'fraction',
-            renderFraction: function(currentClass, totalClass) {
+            renderFraction: function (currentClass, totalClass) {
               return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
             }
           }
@@ -84,7 +84,7 @@
 
   })();
 
-  (function() {
+  (function () {
 
     // faq
 
@@ -92,7 +92,7 @@
     var faqContent = document.querySelectorAll('.faq__item p');
 
     if (faqToggles) {
-      var onTFaqTogglesClick = function(evt) {
+      var onTFaqTogglesClick = function (evt) {
         var faqContainer = evt.target.closest('.faq__title').parentElement;
         if (faqContainer.classList.contains('faq__item--open')) {
           faqContainer.classList.remove('faq__item--open');
@@ -111,7 +111,7 @@
 
   })();
 
-  (function() {
+  (function () {
 
     // filter
 
@@ -119,7 +119,7 @@
     var filterContent = document.querySelectorAll('.filter__content');
 
     if (filterToggles) {
-      var onFilterTogglesClick = function(evt) {
+      var onFilterTogglesClick = function (evt) {
         var filterContainer = evt.target.closest('.filter__title').parentElement;
         if (filterContainer.classList.contains('filter--open')) {
           filterContainer.classList.remove('filter--open');
@@ -138,7 +138,7 @@
 
   })();
 
-  (function() {
+  (function () {
 
     // Open filter
 
@@ -146,32 +146,32 @@
     var openFilterBtn = document.querySelector('.catalog__btn');
     var closeFilterBtn = document.querySelector('.filter__close');
 
-     if (openFilterBtn && closeFilterBtn) {
+    if (openFilterBtn && closeFilterBtn) {
 
-      var openFilter = function() {
+      var openFilter = function () {
         filter.classList.add('filter-show');
         openFilterBtn.classList.add('catalog__btn-close');
-      }
+      };
 
-      var closeFilter = function() {
+      var closeFilter = function () {
         filter.classList.remove('filter-show');
         openFilterBtn.classList.remove('catalog__btn-close');
-      }
+      };
 
-      var onOpenFilterBtnClick = function() {
+      var onOpenFilterBtnClick = function () {
         openFilter();
         document.addEventListener('keydown', onEscDown);
-      }
+      };
 
-      var onCloseFilterBtnClick = function() {
+      var onCloseFilterBtnClick = function () {
         closeFilter();
         document.removeEventListener('keydown', onEscDown);
-      }
+      };
 
       var onEscDown = window.utils.createEscHandler(onCloseFilterBtnClick);
 
-      openFilterBtn.addEventListener("click", onOpenFilterBtnClick);
-      closeFilterBtn.addEventListener("click", onCloseFilterBtnClick);
+      openFilterBtn.addEventListener('click', onOpenFilterBtnClick);
+      closeFilterBtn.addEventListener('click', onCloseFilterBtnClick);
     }
 
   })();
