@@ -61,10 +61,22 @@ input::-ms-reveal {
   height: 0;
 }
 
-input[type="search"] {
+input[type="search"],
+input[type="number"] {
   appearance: textfield;
 }
 
 input[type="search"]::-webkit-search-decoration {
   appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: textfield;
 }

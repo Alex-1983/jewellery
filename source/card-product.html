@@ -419,6 +419,48 @@
         </ul>
       </div>
     </footer>
+    <section class="modal popup-card">
+      <h2 class="visually-hidden">Product</h2>
+      <button class="btn popup-card__close" aria-label="Закрыть"></button>
+      <p>The item was added to your cart</p>
+      <div class="popup-card__wrap">
+        <div class="popup-card__img-wrap">
+          <picture>
+            <source type="image/webp" media="(max-width: 767px)" srcset="img/img-card-sm@1x.webp, img/img-card-sm@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 1023px)" srcset="img/img-card-md@1x.webp, img/img-card-md@2x.webp 2x">
+            <source type="image/webp" srcset="img/img-card-lg@1x.webp, img/img-card-lg@2x.webp 2x">
+            <!-- 1х: 70px; 2x: 140px -->
+            <source media="(max-width: 767px)" srcset="img/img-card-sm@1x.jpg, img/img-card-sm@2x.jpg 2x">
+            <!-- 1х: 88px; 2x: 176px -->
+            <source media="(max-width: 1023px)" srcset="img/img-card-md@1x.jpg, img/img-card-md@2x.jpg 2x">
+            <!-- 1х: 84px; 2x: 168px -->
+            <img src="img/img-card-lg@1x.jpg" srcset="img/img-card-full-lg@2x.jpg 2x" width="84" height="79" alt="Gold necklace">
+          </picture>
+        </div>
+        <div class="popup-card__info">
+          <h3>Gold Necklace</h3>
+          <b>$&nbsp;115</b>
+        </div>
+        <div class="popup-card__field-num field-num">
+          <div class="field-num__input-wrap">
+            <div class="field-num__input-and-btns">
+              <button class="btn field-num__btn field-num__btn--minus" type="button">-</button>
+              <button class="btn field-num__btn field-num__btn--plus" type="button">+</button>
+              <input type="number" value="1" name="quantity" max="10" min="1" step="1">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup-card__description">
+        <p>You have 1 item in the cart</p>
+        <p>Cart subtotal: $ 115</p>
+      </div>
+      <div class="popup-card__link-wrap">
+      <a class="btn popup-card__link" href="catalog.html">Continue shopping</a>
+      <a class="btn popup-card__link popup-card__link--checkout" href="#">Checkout</a>
+      </div>
+    </section>
+    <div class="modal-overlay"></div>
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>
   </body>

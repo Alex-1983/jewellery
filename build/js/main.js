@@ -151,27 +151,73 @@
       var openFilter = function () {
         filter.classList.add('filter-show');
         openFilterBtn.classList.add('catalog__btn-close');
+        document.addEventListener('keydown', onEscDown);
       };
 
       var closeFilter = function () {
         filter.classList.remove('filter-show');
         openFilterBtn.classList.remove('catalog__btn-close');
+        document.removeEventListener('keydown', onEscDown);
       };
 
       var onOpenFilterBtnClick = function () {
         openFilter();
-        document.addEventListener('keydown', onEscDown);
       };
 
       var onCloseFilterBtnClick = function () {
         closeFilter();
-        document.removeEventListener('keydown', onEscDown);
       };
 
       var onEscDown = window.utils.createEscHandler(onCloseFilterBtnClick);
 
       openFilterBtn.addEventListener('click', onOpenFilterBtnClick);
       closeFilterBtn.addEventListener('click', onCloseFilterBtnClick);
+    }
+
+  })();
+
+  (function () {
+
+    // Popup Card
+
+    var modal = document.querySelector('.modal');
+    var modalOpenBtn = document.querySelector('.gallery__link');
+    var modalCloseBtn = document.querySelector('.popup-card__close');
+    var overlay = document.querySelector('.modal-overlay');
+    var body = document.querySelector('body');
+
+    if (modalOpenBtn && modalCloseBtn) {
+
+      var closeModal = function () {
+        modal.classList.remove('modal--open');
+        overlay.classList.remove('modal-overlay-show');
+        body.classList.add('no-scroll');
+        overlay.removeEventListener('click', closeModal);
+
+      };
+
+      var openModal = function () {
+        modal.classList.add('modal--open');
+        overlay.classList.add('modal-overlay-show');
+        body.classList.add('no-scroll');
+        overlay.addEventListener('click', closeModal);
+      };
+
+      var onClickModalCloseBtn = function () {
+        closeModal();
+        document.removeEventListener('keydown', onEscDown);
+      };
+
+      var onClickModalOpenBtn = function (evt) {
+        evt.preventDefault();
+        openModal();
+        document.addEventListener('keydown', onEscDown);
+      };
+
+      var onEscDown = window.utils.createEscHandler(onClickModalCloseBtn);
+
+      modalOpenBtn.addEventListener('click', onClickModalOpenBtn);
+      modalCloseBtn.addEventListener('click', onClickModalCloseBtn);
     }
 
   })();
