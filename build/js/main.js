@@ -2,42 +2,44 @@
 
 (function () {
 
-  var ESC_KEYCODE = 27;
+  (function () {
 
-  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    var ESC_KEYCODE = 27;
 
-  var createEscHandler = function (fn) {
-    return function (evt) {
-      if (evt.keyCode === ESC_KEYCODE) {
-        fn();
-      }
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    var createEscHandler = function (fn) {
+      return function (evt) {
+        if (evt.keyCode === ESC_KEYCODE) {
+          fn();
+        }
+      };
     };
-  };
 
-  window.utils = {
-    createEscHandler: createEscHandler
-  };
+    window.utils = {
+      createEscHandler: createEscHandler
+    };
+
+  })();
+
+  // menu
 
   (function () {
 
-    // menu
-
-    var body = document.querySelector('body');
     var header = document.querySelector('.header');
-    var burger = document.querySelector('.burger');
 
-    if (burger) {
+    if (header) {
+      var burger = header.querySelector('.burger');
       burger.addEventListener('click', function () {
         header.classList.toggle('header--open');
-        body.classList.toggle('no-scroll');
       });
     }
 
   })();
 
-  (function () {
+  // slider
 
-    // slider
+  (function () {
 
     window.mainSwipper = new window.Swiper('.swiper-container', {
       slidesPerView: 4,
@@ -60,7 +62,7 @@
           slidesPerGroup: 2,
         },
 
-        320: {
+        767: {
           slidesPerView: 2,
           slidesPerGroup: 2,
           spaceBetween: 30,
@@ -84,14 +86,16 @@
 
   })();
 
+  // faq
+
   (function () {
 
-    // faq
+    var faq = document.querySelector('.faq');
 
-    var faqToggles = document.querySelectorAll('.faq__toggle');
-    var faqContent = document.querySelectorAll('.faq__item p');
+    if (faq) {
+      var faqToggles = faq.querySelectorAll('.faq__toggle');
+      var faqContent = faq.querySelectorAll('.faq__item p');
 
-    if (faqToggles) {
       var onTFaqTogglesClick = function (evt) {
         var faqContainer = evt.target.closest('.faq__title').parentElement;
         if (faqContainer.classList.contains('faq__item--open')) {
@@ -111,14 +115,19 @@
 
   })();
 
+  // filter
+
   (function () {
 
-    // filter
+    var filter = document.querySelector('.filter');
+    var openFilterBtn = document.querySelector('.catalog__btn');
 
-    var filterToggles = document.querySelectorAll('.filter__toggle');
-    var filterContent = document.querySelectorAll('.filter__content');
+    if (filter) {
 
-    if (filterToggles) {
+      var filterToggles = filter.querySelectorAll('.filter__toggle');
+      var filterContent = filter.querySelectorAll('.filter__content');
+      var closeFilterBtn = filter.querySelector('.filter__close');
+
       var onFilterTogglesClick = function (evt) {
         var filterContainer = evt.target.closest('.filter__title').parentElement;
         if (filterContainer.classList.contains('filter--open')) {
@@ -130,23 +139,6 @@
           filterContainer.classList.add('filter--open');
         }
       };
-
-      for (var i = 0; i < filterToggles.length; i++) {
-        filterToggles[i].addEventListener('click', onFilterTogglesClick);
-      }
-    }
-
-  })();
-
-  (function () {
-
-    // Open filter
-
-    var filter = document.querySelector('.filter');
-    var openFilterBtn = document.querySelector('.catalog__btn');
-    var closeFilterBtn = document.querySelector('.filter__close');
-
-    if (openFilterBtn && closeFilterBtn) {
 
       var openFilter = function () {
         filter.classList.add('filter-show');
@@ -172,52 +164,151 @@
 
       openFilterBtn.addEventListener('click', onOpenFilterBtnClick);
       closeFilterBtn.addEventListener('click', onCloseFilterBtnClick);
+
+      for (var i = 0; i < filterToggles.length; i++) {
+        filterToggles[i].addEventListener('click', onFilterTogglesClick);
+      }
     }
 
   })();
 
+  // Popup log-In
+
   (function () {
 
-    // Popup Card
-
-    var modal = document.querySelector('.modal');
-    var modalOpenBtn = document.querySelector('.gallery__link');
-    var modalCloseBtn = document.querySelector('.popup-card__close');
-    var overlay = document.querySelector('.modal-overlay');
+    var popup = document.querySelector('.popup-login');
+    var popupOpenBtn = document.querySelector('.block-buyer__link');
+    var popupOpenBtnMd = document.querySelector('.header__nav-link');
+    var overlay = document.querySelector('.overlay');
     var body = document.querySelector('body');
 
-    if (modalOpenBtn && modalCloseBtn) {
+    if (popup) {
 
-      var closeModal = function () {
-        modal.classList.remove('modal--open');
-        overlay.classList.remove('modal-overlay-show');
-        body.classList.add('no-scroll');
-        overlay.removeEventListener('click', closeModal);
+      var popupCloseBtn = popup.querySelector('.popup-login__close');
+      var form = popup.querySelector('.popup-login__form');
+      var email = popup.querySelector('[name=email]');
+      var password = popup.querySelector('[name=reg-pass]');
+      var isStorageSupport = true;
+      var storageEmail = '';
 
+      try {
+        storageEmail = localStorage.getItem('email');
+      } catch (err) {
+        isStorageSupport = false;
+      }
+
+      var getItemFocus = function () {
+        if (storageEmail) {
+          email.value = storageEmail;
+          password.focus();
+        } else {
+          email.focus();
+        }
       };
 
-      var openModal = function () {
-        modal.classList.add('modal--open');
-        overlay.classList.add('modal-overlay-show');
-        body.classList.add('no-scroll');
-        overlay.addEventListener('click', closeModal);
+      var getStorageSupport = function () {
+        if (isStorageSupport) {
+          localStorage.setItem('email', email.value);
+        }
       };
 
-      var onClickModalCloseBtn = function () {
-        closeModal();
+      var closePopup = function () {
+        popup.classList.remove('popup-login--open');
+        overlay.classList.remove('overlay-show');
+        body.classList.remove('no-scroll');
+        overlay.removeEventListener('click', closePopup);
+      };
+
+      var openPopup = function () {
+        popup.classList.add('popup-login--open');
+        overlay.classList.add('overlay-show');
+        body.classList.add('no-scroll');
+        overlay.addEventListener('click', closePopup);
+      };
+
+      var openPopupMd = function () {
+        popup.classList.add('popup-login--open');
+        overlay.classList.add('overlay-show');
+        body.classList.add('no-scroll');
+        overlay.addEventListener('click', closePopup);
+      };
+
+      var onClickPopupCloseBtn = function () {
+        closePopup();
         document.removeEventListener('keydown', onEscDown);
       };
 
-      var onClickModalOpenBtn = function (evt) {
+      var onClickPopupOpenBtn = function (evt) {
         evt.preventDefault();
-        openModal();
+        openPopup();
+        getItemFocus();
         document.addEventListener('keydown', onEscDown);
       };
 
-      var onEscDown = window.utils.createEscHandler(onClickModalCloseBtn);
+      var onClickPopupOpenBtnMd = function (evt) {
+        evt.preventDefault();
+        openPopupMd();
+        getItemFocus();
+        document.addEventListener('keydown', onEscDown);
+      };
 
-      modalOpenBtn.addEventListener('click', onClickModalOpenBtn);
-      modalCloseBtn.addEventListener('click', onClickModalCloseBtn);
+      var onEscDown = window.utils.createEscHandler(onClickPopupCloseBtn);
+
+      popupOpenBtn.addEventListener('click', onClickPopupOpenBtn);
+      popupOpenBtnMd.addEventListener('click', onClickPopupOpenBtnMd);
+      popupCloseBtn.addEventListener('click', onClickPopupCloseBtn);
+
+      form.addEventListener('submit', function () {
+        if (isStorageSupport) {
+          getStorageSupport();
+        }
+      });
+    }
+
+  })();
+
+  // Popup Card
+
+  (function () {
+
+    var popup = document.querySelector('.popup-card');
+    var popupOpenBtn = document.querySelector('.gallery__link');
+    var overlay = document.querySelector('.overlay-card');
+    var body = document.querySelector('body');
+
+    if (popup) {
+
+      var popupCloseBtn = popup.querySelector('.popup-card__close');
+
+      var closePopup = function () {
+        popup.classList.remove('popup-card--open');
+        overlay.classList.remove('overlay-show');
+        body.classList.remove('no-scroll');
+        overlay.removeEventListener('click', closePopup);
+      };
+
+      var openPopup = function () {
+        popup.classList.add('popup-card--open');
+        overlay.classList.add('overlay-show');
+        body.classList.add('no-scroll');
+        overlay.addEventListener('click', closePopup);
+      };
+
+      var onClickPopupCloseBtn = function () {
+        closePopup();
+        document.removeEventListener('keydown', onEscDown);
+      };
+
+      var onClickPopupOpenBtn = function (evt) {
+        evt.preventDefault();
+        openPopup();
+        document.addEventListener('keydown', onEscDown);
+      };
+
+      var onEscDown = window.utils.createEscHandler(onClickPopupCloseBtn);
+
+      popupOpenBtn.addEventListener('click', onClickPopupOpenBtn);
+      popupCloseBtn.addEventListener('click', onClickPopupCloseBtn);
     }
 
   })();

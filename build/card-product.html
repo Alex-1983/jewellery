@@ -429,9 +429,45 @@
         </ul>
       </div>
     </footer>
+    <section class="modal popup-login">
+      <button class="btn close popup-login__close" aria-label="Закрыть"></button>
+      <div class="popup-login__img-wrap">
+        <picture>
+          <source type="image/webp" media="(max-width: 767px)" srcset="img/login-bg-sm@1x.webp, img/login-bg-sm@2x.webp 2x">
+          <source type="image/webp" media="(max-width: 1023px)" srcset="img/login-bg-md@1x.webp, img/ilogin-bg-md@2x.webp 2x">
+          <source type="image/webp" srcset="img/login-bg-lg@1x.webp, img/login-bg-lg@2x.webp 2x">
+          <!-- 1х: 270px; 2x: 540px -->
+          <source media="(max-width: 767px)" srcset="img/login-bg-sm@1x.jpg, img/login-bg-sm@2x.jpg 2x">
+          <!-- 1х: 442px; 2x: 884px -->
+          <source media="(max-width: 1023px)" srcset="img/login-bg-md@1x.jpg, img/login-bg-md@2x.jpg 2x">
+          <!-- 1х: 430px; 2x: 860px -->
+          <img src="img/login-bg-lg@1x.jpg" srcset="img/login-bg-lg@2x.jpg 2x" width="430" height="138" alt="jewellery">
+        </picture>
+      </div>
+      <div class="popup-login__wrap">
+        <h2>log in</h2>
+        <form class="popup-login__form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="popup-login__item">
+            <label>
+              <input type="email" name="email" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required="">
+            </label>
+          </div>
+          <div class="popup-login__item popup-login__item--password">
+            <label>
+              <input class="password" type="password" name="reg-pass" placeholder="Password" required="">
+            </label>
+          </div>
+          <a class="popup-login__password-link" href="#">Forgot your password?</a>
+          <button class="btn popup-login__btn" type="submit">log in</button>
+        </form>
+        <div class="popup-login__bottom-row">
+          <p>Don’t have an account?<a href="#">Sign up</a></p>
+        </div>
+      </div>
+    </section>
     <section class="modal popup-card">
       <h2 class="visually-hidden">Product</h2>
-      <button class="btn popup-card__close" aria-label="Закрыть"></button>
+      <button class="btn close popup-card__close" aria-label="Закрыть"></button>
       <p>The item was added to your cart</p>
       <div class="popup-card__wrap">
         <div class="popup-card__img-wrap">
@@ -466,11 +502,12 @@
         <p>Cart subtotal: $ 115</p>
       </div>
       <div class="popup-card__link-wrap">
-      <a class="btn popup-card__link" href="catalog.html">Continue shopping</a>
-      <a class="btn popup-card__link popup-card__link--checkout" href="#">Checkout</a>
+        <a class="btn popup-card__link" href="catalog.html">Continue shopping</a>
+        <a class="btn popup-card__link popup-card__link--checkout" href="#">Checkout</a>
       </div>
     </section>
-    <div class="modal-overlay"></div>
+    <div class="overlay"></div>
+    <div class="overlay-card"></div>
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>
   </body>

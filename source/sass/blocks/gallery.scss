@@ -30,6 +30,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
+  margin-right: 15px;
   padding-top: 10px;
   width: 51.3%;
 
@@ -40,6 +41,7 @@
   }
 
   @media (max-width: $screen-sm) {
+    margin-right: 0;
     padding-top: 0;
     width: 100%;
   }

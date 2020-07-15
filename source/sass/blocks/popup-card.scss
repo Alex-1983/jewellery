@@ -1,18 +1,26 @@
 .popup-card {
-  top: 38.7%;
+  top: 26.5%;
+
+  display: none;
+
   padding: 46px 0 55px;
   width: 502px;
 
   @media (max-width: $screen-md) {
-    top: 36.8%;
+    top: 22.5%;
+    width: 65.4%;
   }
 
   @media (max-width: $screen-sm) {
     top: 16.6%;
+
     padding-top: 37px;
     padding-bottom: 22px;
+    width: 90.6%;
+  }
 
-    width: 290px;
+  &--open {
+    display: block;
   }
 }
 
@@ -165,7 +173,7 @@
   border: 1px solid $brown;
 
   @media (max-width: $screen-md) {
-    width: 205px;
+    width: 46.6%;
   }
 
   @media (max-width: $screen-sm) {
@@ -200,39 +208,8 @@
   right: 16px;
   z-index: 101;
 
-  width: 25px;
-  height: 25px;
-
-  background-color: transparent;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    width: 18px;
-    height: 2px;
-
-    background-color: $text-color;
-  }
-
-  &::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  &::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-
   @media (max-width: $screen-sm) {
     top: 9px;
     right: 10px;
-  }
-
-  &:hover,
-  &:focus {
-    opacity: 0.5;
   }
 }

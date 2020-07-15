@@ -199,6 +199,14 @@
       height: auto;
     }
   }
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+
+    @media (max-width: $screen-md) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .chjewellery__img-wrap img {
@@ -206,7 +214,6 @@
   height: 100%;
 
   font-family: "object-fit: cover";/*stylelint-disable*/
-
   object-fit: cover;
   object-position: center;
 
