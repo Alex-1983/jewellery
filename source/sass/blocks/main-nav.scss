@@ -11,11 +11,12 @@
 .header__nav-wrap--show .main-nav__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 0 auto;
   padding: 13px;
   padding-right: 0;
 
-  width: 520px;
+  width: auto;
 
   @media (max-width: $screen-md) {
     display: none;
