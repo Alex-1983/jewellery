@@ -12,6 +12,10 @@
   }
 }
 
+.chjewellery__inner {
+  text-align: center;
+}
+
 .chjewellery__inner h2 {
   margin-bottom: 18px;
 
@@ -21,7 +25,7 @@
 .chjewellery__inner a {
   margin-bottom: 60px;
   padding-bottom: 4px;
-  width: 74px;
+  width: auto;
 
   @media (max-width: $screen-sm) {
     margin-bottom: 45px;
@@ -214,6 +218,7 @@
   height: 100%;
 
   font-family: "object-fit: cover";/*stylelint-disable*/
+
   object-fit: cover;
   object-position: center;
 

@@ -8,14 +8,18 @@
   }
 }
 
-.blog h2 {
+.blog__inner {
+  text-align: center;
+}
+
+.blog__inner h2 {
   margin-bottom: 20px;
 }
 
 .blog__link {
   margin-bottom: 60px;
   padding-bottom: 3px;
-  width: 65px;
+  width: auto;
 
   @media (max-width: $screen-sm) {
     margin-bottom: 50px;
@@ -168,7 +172,7 @@
 
 .blog__text a {
   padding-bottom: 3px;
-  width: 97px;
+  width: auto;
 }
 
 .blog__img-wrap {

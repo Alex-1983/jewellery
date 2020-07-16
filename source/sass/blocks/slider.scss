@@ -32,6 +32,7 @@
   position: relative;
 
   padding: 0 97px 52px;
+  text-align: center;
 
   @media (max-width: $screen-md) {
     padding: 0 45px 43px;
@@ -63,7 +64,7 @@
 
 .slider__link {
   margin-bottom: 60px;
-  width: 80px;
+  width: auto;
 
   @media (max-width: $screen-md) {
     margin-bottom: 50px;
