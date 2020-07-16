@@ -1,11 +1,9 @@
 .social {
   padding-top: 7px;
-  width: 117px;
 
   @media (max-width: $screen-sm) {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
   }
 }
 
@@ -51,6 +49,7 @@
 
     @media (max-width: $screen-sm) {
       position: static;
+
       width: 20px;
       height: 20px;
     }

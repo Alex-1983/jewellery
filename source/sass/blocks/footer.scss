@@ -122,19 +122,10 @@
 
 .footer__list {
   padding-top: 7px;
-  width: 168px;
 
   @media (max-width: $screen-sm) {
     margin-bottom: 35px;
     width: 100%;
-  }
-
-  &--right {
-    width: 116px;
-
-    @media (max-width: $screen-sm) {
-      width: 100%;
-    }
   }
 }
 
