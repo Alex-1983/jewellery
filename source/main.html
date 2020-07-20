@@ -46,8 +46,8 @@
             <a class="btn block-buyer__link" href="#">login</a>
             <a class="btn block-buyer__link block-buyer__link--cart" href="#">Cart<span>0</span></a>
           </div>
-          <button class="btn burger" type="button" aria-label="Показать главное меню" title="Открыть">
-            <span>Показать главное меню</span>
+          <button class="btn burger" type="button" aria-label="Show the main menu" title="Open">
+            <span>Show the main menu</span>
           </button>
           <a class="header__card-icon" href="#">
             <svg width="20" height="18">
@@ -240,8 +240,8 @@
             </ul>
           </div>
           <div class="slider__pagination swiper-pagination"></div>
-          <button class="btn arrow arrow--prev" type="button">Вперёд</button>
-          <button class="btn arrow arrow--next" type="button">Назад</button>
+          <button class="btn arrow arrow--prev" type="button">Prev</button>
+          <button class="btn arrow arrow--next" type="button">Next</button>
         </div>
       </section>
       <section class="blog">
@@ -323,7 +323,7 @@
             <div class="faq__item faq__item--open">
               <div class="faq__title">
                 <h3>What materials are the jewellery made of?</h3>
-                <button class="btn faq__toggle" type="button" name="button"></button>
+                <button class="btn faq__toggle" type="button" name="button" aria-label="Show response"></button>
               </div>
               <p>
                 Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.
@@ -332,7 +332,7 @@
             <div class="faq__item">
               <div class="faq__title faq__title--deliver">
                 <h3>Which countries do you deliver to?</h3>
-                <button class="btn faq__toggle" type="button" name="button"></button>
+                <button class="btn faq__toggle" type="button" name="button" aria-label="Show response"></button>
               </div>
               <p>
                 Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.
@@ -341,7 +341,7 @@
             <div class="faq__item ">
               <div class="faq__title faq__title--payment">
                 <h3>What are the payment methods?</h3>
-                <button class="btn faq__toggle" type="button" name="button"></button>
+                <button class="btn faq__toggle" type="button" name="button" aria-label="Show response"></button>
               </div>
               <p>
                 Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.
@@ -350,7 +350,7 @@
             <div class="faq__item">
               <div class="faq__title faq__title--service">
                 <h3>Can I return the jewellery&nbsp;if it didn’t fit me?</h3>
-                <button class="btn faq__toggle" type="button" name="button"></button>
+                <button class="btn faq__toggle" type="button" name="button" aria-label="Show response"></button>
               </div>
               <p>
                 Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and semiprecious stones and crystals.
@@ -467,10 +467,9 @@
           <h2>The good stuff in your inbox</h2>
           <p>News and updates from CH. No spam, we promise.</p>
           <form class="footer__form" action="https://echo.htmlacademy.ru" method="post">
-            <label>
-              <input type="email" name="mail" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required>
-            </label>
-            <button class="btn arrow footer__form-btn" type="button">Sign Up</button>
+            <label class="visually-hidden" for="email">Your E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required>
+            <button class="btn arrow footer__form-btn" type="submit">Sign Up</button>
           </form>
         </div>
         <ul class="list-reset footer__list">
@@ -560,14 +559,12 @@
         <h2>log in</h2>
         <form class="popup-login__form" action="https://echo.htmlacademy.ru" method="post">
           <div class="popup-login__item">
-            <label>
-              <input type="email" name="email" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required>
-            </label>
+            <label class="visually-hidden" for="email-popup">Your E-mail</label>
+            <input type="email" name="email" id="email-popup" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required>
           </div>
           <div class="popup-login__item popup-login__item--password">
-            <label>
-              <input class="password" type="password" name="reg-pass" placeholder="Password" required>
-            </label>
+            <label class="visually-hidden" for="Password">Password</label>
+            <input class="password" type="password" id="Password" name="reg-pass" placeholder="Password" required>
           </div>
           <a class="popup-login__password-link" href="#">Forgot your password?</a>
           <button class="btn popup-login__btn" type="submit">log in</button>

@@ -56,8 +56,8 @@
             <a class="btn block-buyer__link" href="#">login</a>
             <a class="btn block-buyer__link block-buyer__link--cart" href="#">Cart<span>0</span></a>
           </div>
-          <button class="btn burger" type="button" aria-label="Показать главное меню" title="Открыть">
-            <span>Показать главное меню</span>
+          <button class="btn burger" type="button" aria-label="Show the main menu" title="Open">
+            <span>Show the main menu</span>
           </button>
           <a class="header__card-icon" href="#">
             <svg width="20" height="18">
@@ -157,16 +157,16 @@
               <span>of</span>
               <ul class="list-reset gallery__list">
                 <li class="gallery__item">
-                  <a class="gellery__link-page" href="#">1</a>
+                  <a class="gellery__page" href="#">1</a>
                 </li>
                 <li class="gallery__item">
-                  <a class="gellery__link-page gellery__link-page--hidden" href="#">2</a>
+                  <a class="gellery__page gellery__page--hidden" href="#">2</a>
                 </li>
                 <li class="gallery__item">
-                  <a class="gellery__link-page gellery__link-page--hidden" href="#">3</a>
+                  <a class="gellery__page gellery__page--hidden" href="#">3</a>
                 </li>
                 <li class="gallery__item">
-                  <a class="gellery__link-page" href="#">4</a>
+                  <a class="gellery__page" href="#">4</a>
                 </li>
               </ul>
             </div>
@@ -344,8 +344,8 @@
             </ul>
           </div>
           <div class="slider__pagination swiper-pagination"></div>
-          <button class="btn arrow arrow--prev" type="button">Вперёд</button>
-          <button class="btn arrow arrow--next" type="button">Назад</button>
+          <button class="btn arrow arrow--prev" type="button">prev</button>
+          <button class="btn arrow arrow--next" type="button">next</button>
         </div>
       </section>
     </main>
@@ -355,10 +355,9 @@
           <h2>The good stuff in your inbox</h2>
           <p>News and updates from CH. No spam, we promise.</p>
           <form class="footer__form" action="https://echo.htmlacademy.ru" method="post">
-            <label>
-              <input type="email" name="mail" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required="">
-            </label>
-            <button class="btn arrow footer__form-btn" type="button">Sign Up</button>
+            <label class="visually-hidden" for="email">Your E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required="">
+            <button class="btn arrow footer__form-btn" type="submit">Sign Up</button>
           </form>
         </div>
         <ul class="list-reset footer__list">
@@ -448,14 +447,12 @@
         <h2>log in</h2>
         <form class="popup-login__form" action="https://echo.htmlacademy.ru" method="post">
           <div class="popup-login__item">
-            <label>
-              <input type="email" name="email" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required="">
-            </label>
+            <label class="visually-hidden" for="email-popup">Your E-mail</label>
+            <input type="email" name="email" id="email-popup" placeholder="Your E-mail" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete="on" required="">
           </div>
           <div class="popup-login__item popup-login__item--password">
-            <label>
-              <input class="password" type="password" name="reg-pass" placeholder="Password" required="">
-            </label>
+            <label class="visually-hidden" for="Password">Password</label>
+            <input class="password" type="password" id="Password" name="reg-pass" placeholder="Password" required="">
           </div>
           <a class="popup-login__password-link" href="#">Forgot your password?</a>
           <button class="btn popup-login__btn" type="submit">log in</button>
@@ -467,7 +464,7 @@
     </section>
     <section class="modal popup-card">
       <h2 class="visually-hidden">Product</h2>
-      <button class="btn close popup-card__close" aria-label="Закрыть"></button>
+      <button class="btn close popup-card__close" aria-label="Close"></button>
       <p>The item was added to your cart</p>
       <div class="popup-card__wrap">
         <div class="popup-card__img-wrap">
@@ -503,7 +500,7 @@
       </div>
       <div class="popup-card__link-wrap">
         <a class="btn popup-card__link" href="catalog.html">Continue shopping</a>
-        <a class="btn popup-card__link popup-card__link--checkout" href="#">Checkout</a>
+        <a class="btn popup-card__link popup-card__link--checkout" href="#busket">Checkout</a>
       </div>
     </section>
     <div class="overlay"></div>

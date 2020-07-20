@@ -26,6 +26,10 @@
 
   color: $white;
 
+  @media (max-width: $screen-md) {
+    padding-left: 32px;
+  }
+
   @media (max-width: $screen-sm) {
     padding: 5px;
 

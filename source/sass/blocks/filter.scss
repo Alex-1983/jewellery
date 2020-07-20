@@ -22,6 +22,10 @@
 
     box-shadow: none;
   }
+
+  &--open {
+    display: block;
+  }
 }
 
 .filter__container {
@@ -34,6 +38,10 @@
 
 .filter__item {
   border-bottom: 1px solid $brown;
+
+  &--open {
+    display: block;
+  }
 
   &:last-of-type {
     border: 0;
@@ -122,7 +130,7 @@
   }
 }
 
-.js .filter--open .filter__title {
+.js .filter__item--open .filter__title {
   padding-bottom: 22px;
 
   @media (max-width: $screen-md) {
@@ -147,7 +155,7 @@
   }
 }
 
-.js .filter--open .filter__toggle::after {
+.js .filter__item--open .filter__toggle::after {
   top: 31px;
 
   transition: 0.3s;
@@ -384,7 +392,7 @@
   display: none;
 }
 
-.js .filter--open .filter__content {
+.js .filter__item--open .filter__content {
   display: block;
 }
 
@@ -435,8 +443,4 @@
       opacity: 0.5;
     }
   }
-}
-
-.filter-show {
-  display: block;
 }

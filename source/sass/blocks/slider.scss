@@ -164,11 +164,14 @@
   }
 
   &::after {
-    top: 37%;
+    top: 50%;
+
+    right: 3px;
 
     border: 1px solid $brown;
     border-bottom: transparent;
     border-left: transparent;
+    transform: translateY(-50%) rotate(45deg);
   }
 
 
@@ -180,8 +183,6 @@
 
   @media (max-width: $screen-md) {
     &::after {
-      top: 25%;
-
       width: 11px;
       height: 11px;
     }
