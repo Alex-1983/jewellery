@@ -2,6 +2,16 @@
 
 (function () {
 
+  var ESC_KEYCODE = 27;
+
+  var createEscHandler = function (fn) {
+    return function (evt) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        fn();
+      }
+    };
+  };
+
   var filter = document.querySelector('.filter');
   var openFilterBtn = document.querySelector('.catalog__btn');
 
@@ -43,7 +53,7 @@
       closeFilter();
     };
 
-    var onEscDown = window.utils.createEscHandler(onCloseFilterBtnClick);
+    var onEscDown = createEscHandler(onCloseFilterBtnClick);
 
     openFilterBtn.addEventListener('click', onOpenFilterBtnClick);
     closeFilterBtn.addEventListener('click', onCloseFilterBtnClick);
