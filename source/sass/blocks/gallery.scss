@@ -265,7 +265,8 @@
     bottom: 46px;
     left: 50%;
 
-    display: block;
+    display: flex;
+    justify-content: space-between;
 
     width: 38px;
 
@@ -273,29 +274,15 @@
   }
 }
 
-
 .gallery__pagination span {
-  position: absolute;
-  bottom: 0;
-  left: 10px;
-
-  font-size: 14px;
-}
-
-
-.gallery__list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.gellery__page {
   display: block;
 
   font-size: 14px;
 
   color: $text-color;
+}
 
-  &--hidden {
-    display: none;
-  }
+.gallery__pagination b {
+  font-weight: 500;
+  font-size: 14px;
 }
