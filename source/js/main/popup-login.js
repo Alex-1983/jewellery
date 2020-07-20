@@ -2,6 +2,16 @@
 
 (function () {
 
+  var ESC_KEYCODE = 27;
+
+  var createEscHandler = function (fn) {
+    return function (evt) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        fn();
+      }
+    };
+  };
+
   var popup = document.querySelector('.popup-login');
   var popupOpenBtn = document.querySelector('.block-buyer__link');
   var popupOpenBtnMd = document.querySelector('.header__nav-link');
@@ -78,7 +88,7 @@
       document.addEventListener('keydown', onEscDown);
     };
 
-    var onEscDown = window.utils.createEscHandler(onClickPopupCloseBtn);
+    var onEscDown = createEscHandler(onClickPopupCloseBtn);
 
     popupOpenBtn.addEventListener('click', onClickPopupOpenBtn);
     popupOpenBtnMd.addEventListener('click', onClickPopupOpenBtnMd);

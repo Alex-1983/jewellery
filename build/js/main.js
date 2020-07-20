@@ -2,107 +2,6 @@
 
 (function () {
 
-  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-
-})();
-
-'use strict';
-
-(function () {
-
-  var ESC_KEYCODE = 27;
-
-  var createEscHandler = function (fn) {
-    return function (evt) {
-      if (evt.keyCode === ESC_KEYCODE) {
-        fn();
-      }
-    };
-  };
-
-  window.utils = {
-    createEscHandler: createEscHandler
-  };
-
-})();
-
-'use strict';
-
-(function () {
-
-  var header = document.querySelector('.header');
-  var body = document.querySelector('body');
-
-  if (header) {
-    var burger = header.querySelector('.burger');
-
-    var headerToggle = function () {
-      header.classList.toggle('header--open');
-      body.classList.toggle('no-scroll');
-    };
-
-    var onClickBurger = function () {
-      headerToggle();
-    };
-
-    burger.addEventListener('click', onClickBurger);
-  }
-
-})();
-
-'use strict';
-
-(function () {
-
-  window.mainSwipper = new window.Swiper('.swiper-container', {
-    slidesPerView: 4,
-    slidesPerGroup: 4,
-    spaceBetween: 30,
-    loop: true,
-
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + (index + 1) + '</span>';
-      },
-    },
-
-    breakpoints: {
-      1023: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-      },
-
-      767: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          type: 'fraction',
-          renderFraction: function (currentClass, totalClass) {
-            return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
-          }
-        }
-      },
-    },
-
-    navigation: {
-      nextEl: '.arrow--next',
-      prevEl: '.arrow--prev'
-    },
-
-  });
-
-})();
-
-'use strict';
-
-(function () {
-
   var faq = document.querySelector('.faq');
 
   if (faq) {
@@ -189,7 +88,38 @@
 
 (function () {
 
-  /*eslint-disable*/
+  var header = document.querySelector('.header');
+  var body = document.querySelector('body');
+
+  if (header) {
+    var burger = header.querySelector('.burger');
+
+    var headerToggle = function () {
+      header.classList.toggle('header--open');
+      body.classList.toggle('no-scroll');
+    };
+
+    var onClickBurger = function () {
+      headerToggle();
+    };
+
+    burger.addEventListener('click', onClickBurger);
+  }
+
+})();
+
+'use strict';
+
+(function () {
+
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+})();
+
+'use strict';
+
+(function () {
+
   objectFitImages();
 
 })();
@@ -197,6 +127,72 @@
 'use strict';
 
 (function () {
+
+  var ESC_KEYCODE = 27;
+
+  var createEscHandler = function (fn) {
+    return function (evt) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        fn();
+      }
+    };
+  };
+
+  var popup = document.querySelector('.popup-card');
+  var popupOpenBtn = document.querySelector('.gallery__link');
+  var overlay = document.querySelector('.overlay-card');
+  var body = document.querySelector('body');
+
+  if (popup) {
+
+    var popupCloseBtn = popup.querySelector('.popup-card__close');
+
+    var closePopup = function () {
+      popup.classList.remove('popup-card--open');
+      overlay.classList.remove('overlay-show');
+      body.classList.remove('no-scroll');
+      overlay.removeEventListener('click', closePopup);
+    };
+
+    var openPopup = function () {
+      popup.classList.add('popup-card--open');
+      overlay.classList.add('overlay-show');
+      body.classList.add('no-scroll');
+      overlay.addEventListener('click', closePopup);
+    };
+
+    var onClickPopupCloseBtn = function () {
+      closePopup();
+      document.removeEventListener('keydown', onEscDown);
+    };
+
+    var onClickPopupOpenBtn = function (evt) {
+      evt.preventDefault();
+      openPopup();
+      document.addEventListener('keydown', onEscDown);
+    };
+
+    var onEscDown = createEscHandler(onClickPopupCloseBtn);
+
+    popupOpenBtn.addEventListener('click', onClickPopupOpenBtn);
+    popupCloseBtn.addEventListener('click', onClickPopupCloseBtn);
+  }
+
+})();
+
+'use strict';
+
+(function () {
+
+  var ESC_KEYCODE = 27;
+
+  var createEscHandler = function (fn) {
+    return function (evt) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        fn();
+      }
+    };
+  };
 
   var popup = document.querySelector('.popup-login');
   var popupOpenBtn = document.querySelector('.block-buyer__link');
@@ -274,7 +270,7 @@
       document.addEventListener('keydown', onEscDown);
     };
 
-    var onEscDown = window.utils.createEscHandler(onClickPopupCloseBtn);
+    var onEscDown = createEscHandler(onClickPopupCloseBtn);
 
     popupOpenBtn.addEventListener('click', onClickPopupOpenBtn);
     popupOpenBtnMd.addEventListener('click', onClickPopupOpenBtnMd);
@@ -293,44 +289,47 @@
 
 (function () {
 
-  var popup = document.querySelector('.popup-card');
-  var popupOpenBtn = document.querySelector('.gallery__link');
-  var overlay = document.querySelector('.overlay-card');
-  var body = document.querySelector('body');
+  window.mainSwipper = new window.Swiper('.swiper-container', {
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    spaceBetween: 30,
+    loop: true,
 
-  if (popup) {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
 
-    var popupCloseBtn = popup.querySelector('.popup-card__close');
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      },
+    },
 
-    var closePopup = function () {
-      popup.classList.remove('popup-card--open');
-      overlay.classList.remove('overlay-show');
-      body.classList.remove('no-scroll');
-      overlay.removeEventListener('click', closePopup);
-    };
+    breakpoints: {
+      1023: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
 
-    var openPopup = function () {
-      popup.classList.add('popup-card--open');
-      overlay.classList.add('overlay-show');
-      body.classList.add('no-scroll');
-      overlay.addEventListener('click', closePopup);
-    };
+      767: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'fraction',
+          renderFraction: function (currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
+          }
+        }
+      },
+    },
 
-    var onClickPopupCloseBtn = function () {
-      closePopup();
-      document.removeEventListener('keydown', onEscDown);
-    };
+    navigation: {
+      nextEl: '.arrow--next',
+      prevEl: '.arrow--prev'
+    },
 
-    var onClickPopupOpenBtn = function (evt) {
-      evt.preventDefault();
-      openPopup();
-      document.addEventListener('keydown', onEscDown);
-    };
-
-    var onEscDown = window.utils.createEscHandler(onClickPopupCloseBtn);
-
-    popupOpenBtn.addEventListener('click', onClickPopupOpenBtn);
-    popupCloseBtn.addEventListener('click', onClickPopupCloseBtn);
-  }
+  });
 
 })();

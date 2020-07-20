@@ -2,6 +2,16 @@
 
 (function () {
 
+  var ESC_KEYCODE = 27;
+
+  var createEscHandler = function (fn) {
+    return function (evt) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        fn();
+      }
+    };
+  };
+
   var popup = document.querySelector('.popup-card');
   var popupOpenBtn = document.querySelector('.gallery__link');
   var overlay = document.querySelector('.overlay-card');
@@ -36,7 +46,7 @@
       document.addEventListener('keydown', onEscDown);
     };
 
-    var onEscDown = window.utils.createEscHandler(onClickPopupCloseBtn);
+    var onEscDown = createEscHandler(onClickPopupCloseBtn);
 
     popupOpenBtn.addEventListener('click', onClickPopupOpenBtn);
     popupCloseBtn.addEventListener('click', onClickPopupCloseBtn);
