@@ -104,12 +104,12 @@
   if (header) {
     var burger = header.querySelector('.burger');
 
-    var headerToggle = function() {
+    var headerToggle = function () {
       header.classList.toggle('header--open');
       body.classList.toggle('no-scroll');
     };
 
-    var onClickBurger = function() {
+    var onClickBurger = function () {
       headerToggle();
     };
 
@@ -193,7 +193,7 @@
 'use strict';
 
 (function () {
-
+  var DESKTOP = 1023;
   var ESC_KEYCODE = 27;
 
   var createEscHandler = function (fn) {
@@ -209,6 +209,7 @@
   var popupOpenBtnMd = document.querySelector('.header__nav-link');
   var overlay = document.querySelector('.overlay');
   var body = document.querySelector('body');
+  var widthWindow = document.documentElement.clientWidth;
 
   if (popup) {
 
@@ -243,7 +244,6 @@
     var closePopup = function () {
       popup.classList.remove('popup-login--open');
       overlay.classList.remove('overlay-show');
-      body.classList.remove('no-scroll');
       overlay.removeEventListener('click', closePopup);
     };
 
@@ -252,6 +252,13 @@
       overlay.classList.add('overlay-show');
       body.classList.add('no-scroll');
       overlay.addEventListener('click', closePopup);
+    };
+
+    var onResize = function () {
+      widthWindow = document.documentElement.clientWidth;
+      if (widthWindow > DESKTOP) {
+        body.classList.remove('no-scroll');
+      }
     };
 
     var openPopupMd = function () {
@@ -263,6 +270,7 @@
 
     var onClickPopupCloseBtn = function () {
       closePopup();
+      onResize();
       document.removeEventListener('keydown', onEscDown);
     };
 
@@ -285,6 +293,7 @@
     popupOpenBtn.addEventListener('click', onClickPopupOpenBtn);
     popupOpenBtnMd.addEventListener('click', onClickPopupOpenBtnMd);
     popupCloseBtn.addEventListener('click', onClickPopupCloseBtn);
+    overlay.addEventListener('click', onResize);
 
     form.addEventListener('submit', function () {
       if (isStorageSupport) {
